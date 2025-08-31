@@ -1,0 +1,15 @@
+{
+"name": "purchase-connector",
+"config": {
+    "connector.class": "io.confluent.kafka.connect.datagen.DatagenConnector",
+    "key": "purchase.id:Long",
+    "key.value.schema": "false",
+    "schema.string": "{\"type\": \"record\", \"name\": \"Purchase\", \"namespace\": \"ksql\", \"fields\": [{\"name\": \"id\", \"type\": \"long\"}, {\"name\": \"quantity\", \"type\": \"long\"}, {\"name\": \"productid\", \"type\": \"long\"}]}",
+    "kafka.topic": "purchase-topic",
+    "key.format": "avro",
+    "value.format": "avro",
+    "max.interval": "1000",
+    "schema.registry.url": "http://localhost:8090"
+}
+}
+
